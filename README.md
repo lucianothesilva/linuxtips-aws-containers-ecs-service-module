@@ -1,2 +1,2 @@
-# linuxtips-aws-containers-ecs-service-module-
+# linuxtips-aws-containers-ecs-service-module
 Modulo criação services ECS
