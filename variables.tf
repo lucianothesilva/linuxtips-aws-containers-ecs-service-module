@@ -1,6 +1,4 @@
-variable "region" {
-
-}
+variable "region" {}
 
 variable "service_name" {}
 
@@ -20,6 +18,11 @@ variable "service_listener" {}
 
 variable "service_task_execution_role" {}
 
+variable "service_launch_type" {}
+
+variable "service_task_count" {}
+
+variable "service_hosts" {}
 
 variable "service_healthcheck" {
   type = map(any)
@@ -33,8 +36,3 @@ variable "capabilities" {
   type = list(any)
 }
 
-variable "service_launch_type" {}
-
-variable "service_task_count" {}
-
-variable "service_hosts" {}
