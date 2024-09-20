@@ -73,3 +73,36 @@ variable "scale_in_period" {}
 variable "scale_in_evaluation_periods" {}
 
 variable "scale_in_cooldown" {}
+
+# tracking CPU
+variable "scale_tracking_cpu" {}
+
+# tracking requests
+variable "alb_arn" {}
+
+variable "scale_tracking_requests" {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
