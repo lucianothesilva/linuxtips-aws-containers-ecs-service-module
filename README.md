@@ -12,6 +12,9 @@ CPU: Baseado em alarmes no Cloudwatch para realizar o scaling.
 
 Target Tracking CPU: Baseado em um alvo de utilização do cpu (Ex:60 %) e faz o scale in ou out para manter o mais proximo possivel desse valor. Periodos de cooldown definidos para que o scaling não ocorra muito rapidamente em sequência.
 
+Target Tracking Requests: Baseado em um alvo de requisições por instância (Ex 100) faz o scaling para distribuir as requisições por instancias. 
+
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
