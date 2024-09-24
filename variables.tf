@@ -36,51 +36,94 @@ variable "capabilities" {
   type = list(any)
 }
 
-variable "scale_type" {}
+variable "scale_type" {
+  default = null
+}
 
-variable "task_minimum" {}
+variable "task_minimum" {
+  default = 3
+}
 
-variable "task_maximum" {}
+variable "task_maximum" {
+  default = 10
+}
 
 # Autoscaling de CPU
 # out
 
-variable "scale_out_cpu_threshold" {}
+variable "scale_out_cpu_threshold" {
+  default = 80
+}
 
-variable "scale_out_adjustment" {}
+variable "scale_out_adjustment" {
+  default = 1
+}
 
-variable "scale_out_comparison_operator" {}
+variable "scale_out_comparison_operator" {
+  default = "GreaterThanOrEqualToThreshold"
+}
 
-variable "scale_out_statistic" {}
+variable "scale_out_statistic" {
+  default = "Average"
 
-variable "scale_out_period" {}
+}
 
-variable "scale_out_evaluation_periods" {}
+variable "scale_out_period" {
+default = 60
 
-variable "scale_out_cooldown" {}
+}
+
+variable "scale_out_evaluation_periods" {
+  default = 2
+  }
+
+variable "scale_out_cooldown" {
+  default = 60
+}
 
 # in
-variable "scale_in_cpu_threshold" {}
+variable "scale_in_cpu_threshold" {
+  default = 30
+}
 
-variable "scale_in_adjustment" {}
+variable "scale_in_adjustment" {
+  default = -1
+}
 
-variable "scale_in_comparison_operator" {}
+variable "scale_in_comparison_operator" {
+  default = "LessThanorEqualToThreshold"
+}
 
-variable "scale_in_statistic" {}
+variable "scale_in_statistic" {
+  default = "Average"
+}
 
-variable "scale_in_period" {}
+variable "scale_in_period" {
+  default = 120
+}
 
-variable "scale_in_evaluation_periods" {}
+variable "scale_in_evaluation_periods" {
+  default = 3
+}
 
-variable "scale_in_cooldown" {}
+variable "scale_in_cooldown" {
+  default = 120
+}
 
 # tracking CPU
-variable "scale_tracking_cpu" {}
+variable "scale_tracking_cpu" {
+    default = 80
+}
 
 # tracking requests
-variable "alb_arn" {}
+variable "alb_arn" {
+  default = null
+}
 
-variable "scale_tracking_requests" {}
+variable "scale_tracking_requests" {
+  default = 0
+
+}
 
 
 
