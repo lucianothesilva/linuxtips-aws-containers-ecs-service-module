@@ -1,3 +1,4 @@
+# Policy de autoscaling, só é criada se a var estiver como request_tracking
 resource "aws_appautoscaling_policy" "tracking_requests" {
   count = var.scale_type == "requests_tracking" ? 1 : 0
 

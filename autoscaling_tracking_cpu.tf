@@ -1,3 +1,4 @@
+# Policy de autoscaling, só é criada se a var estiver como cpu_tracking
 resource "aws_appautoscaling_policy" "target_tracking_cpu" {
   count = var.scale_type == "cpu_tracking" ? 1 : 0
 
@@ -7,6 +8,7 @@ resource "aws_appautoscaling_policy" "target_tracking_cpu" {
   service_namespace  = aws_appautoscaling_target.main.service_namespace
   scalable_dimension = aws_appautoscaling_target.main.scalable_dimension
 
+# Ajusta o scaling baseado em uma metrica, no caso cpu
   policy_type = "TargetTrackingScaling"
 
   target_tracking_scaling_policy_configuration {

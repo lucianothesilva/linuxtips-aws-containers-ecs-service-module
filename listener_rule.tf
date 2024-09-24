@@ -1,3 +1,4 @@
+# Cria uma regra para o ALB e encaminha o trafego para um target group
 resource "aws_alb_listener_rule" "main" {
   listener_arn = var.service_listener
 

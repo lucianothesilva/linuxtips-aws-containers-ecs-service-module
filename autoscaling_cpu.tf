@@ -1,6 +1,4 @@
-# Revisar e comentar *****
-
-
+# Policy de autoscaling, só é criada se a var estiver como cpu
 resource "aws_appautoscaling_policy" "cpu_high" {
   count = var.scale_type == "cpu" ? 1 : 0
 
@@ -26,6 +24,7 @@ resource "aws_appautoscaling_policy" "cpu_high" {
   }
 }
 
+# Alarme para quando o uso do CPU estiver alto
 resource "aws_cloudwatch_metric_alarm" "cpu_high" {
   count = var.scale_type == "cpu" ? 1 : 0
 
@@ -48,6 +47,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu_high" {
   alarm_actions = aws_appautoscaling_policy.cpu_high[count.index].arn
 }
 
+# Policy para quando o uso do CPU estiver baixo
 resource "aws_appautoscaling_policy" "cpu_low" {
   count = var.scale_type == "cpu" ? 1 : 0
 
@@ -83,8 +83,7 @@ resource "aws_appautoscaling_policy" "cpu_low" {
   }
 }
 
-
-
+#Alarme para quando o uso do CPU estiver baixo
 resource "aws_cloudwatch_metric_alarm" "cpu_low" {
   count = var.scale_type == "cpu" ? 1 : 0
 

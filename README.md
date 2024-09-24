@@ -5,6 +5,13 @@ Imagens Docker são armazenadas no ECR, as Task Definitions referenciam as image
 Configurado Service com mecanismo de circuit breaker que faz rollback de um deployment em caso de falha.
 Configurado o target group para distribuir o trafego entre as tasks no ECS.
 
+
+Metodos de autoscaling:
+
+CPU: Baseado em alarmes no Cloudwatch para realizar o scaling.
+
+Target Tracking CPU: Baseado em um alvo de utilização do cpu (Ex:60 %) e faz o scale in ou out para manter o mais proximo possivel desse valor. Periodos de cooldown definidos para que o scaling não ocorra muito rapidamente em sequência.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
