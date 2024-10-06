@@ -2,6 +2,7 @@ variable "region" {}
 
 variable "service_name" {}
 
+variable "container_image" {}
 variable "cluster_name" {}
 
 variable "vpc_id" {}
