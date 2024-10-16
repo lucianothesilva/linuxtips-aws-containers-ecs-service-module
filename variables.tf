@@ -1,164 +1,164 @@
 variable "region" {
-  type        = string
+  type = string
 }
 
 variable "service_name" {
-  type        = string
+  type = string
 }
 
 variable "cluster_name" {
-  type        = string
+  type = string
 }
 
 variable "vpc_id" {
-  type        = string
+  type = string
 }
 
 variable "private_subnets" {
-  type        = list(string)
+  type = list(string)
 }
 
 variable "service_port" {
-  type        = number
+  type = number
 }
 
 variable "service_cpu" {
-  type        = number
+  type = number
 }
 
 variable "service_memory" {
-  type        = number
+  type = number
 }
 
 variable "service_listener" {
-  type        = string
+  type = string
 }
 
 variable "service_task_execution_role" {
-  type        = string
+  type = string
 }
 
 variable "service_launch_type" {
-  type        = string
+  type = string
 }
 
 variable "service_task_count" {
-  type        = number
+  type = number
 }
 
 variable "service_hosts" {
-  type        = list(string)
+  type = list(string)
 }
 
 variable "service_healthcheck" {
-  type        = map(any)
+  type = map(any)
 }
 
 variable "environment_variables" {
-  type        = list(map(string))
+  type = list(map(string))
 }
 
 variable "capabilities" {
-  type        = list(string)
+  type = list(string)
 }
 
 variable "scale_type" {
-  type        = string
+  type = string
   default     = null
 }
 
 variable "task_minimum" {
-  type        = number
+  type = number
   default     = 3
 }
 
 variable "task_maximum" {
-  type        = number
+  type = number
   default     = 10
 }
 
 
 variable "scale_out_cpu_threshold" {
-  type        = number
+  type = number
   default     = 80
 }
 
 variable "scale_out_adjustment" {
-  type        = number
+  type = number
   default     = 1
 }
 
 variable "scale_out_comparison_operator" {
-  type        = string
+  type = string
   default     = "GreaterThanOrEqualToThreshold"
 }
 
 variable "scale_out_statistic" {
-  type        = string
+  type = string
   default     = "Average"
 }
 
 variable "scale_out_period" {
-  type        = number
+  type = number
   default     = 60
 }
 
 variable "scale_out_evaluation_periods" {
-  type        = number
+  type = number
   default     = 2
 }
 
 variable "scale_out_cooldown" {
-  type        = number
+  type = number
   default     = 60
 }
 
 variable "scale_in_cpu_threshold" {
-  type        = number
+  type = number
   default     = 30
 }
 
 variable "scale_in_adjustment" {
-  type        = number
+  type = number
   default     = -1
 }
 
 variable "scale_in_comparison_operator" {
-  type        = string
+  type = string
   default     = "LessThanOrEqualToThreshold"
 }
 
 variable "scale_in_statistic" {
-  type        = string
+  type = string
   default     = "Average"
 }
 
 variable "scale_in_period" {
-  type        = number
+  type = number
   default     = 120
 }
 
 variable "scale_in_evaluation_periods" {
-  type        = number
+  type = number
   default     = 3
 }
 
 variable "scale_in_cooldown" {
-  type        = number
+  type = number
   default     = 120
 }
 
 variable "scale_tracking_cpu" {
-  type        = number
+  type = number
   default     = 80
 }
 
 variable "alb_arn" {
-  type        = string
+  type = string
   default     = null
 }
 
 variable "scale_tracking_requests" {
-  type        = number
+  type = number
   default     = 0
 }
