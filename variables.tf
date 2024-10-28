@@ -38,8 +38,19 @@ variable "service_task_execution_role" {
   type = string
 }
 
+#variable "service_launch_type" {
+#  type = string
+#}
+
 variable "service_launch_type" {
-  type = string
+  type = list(object({
+    capacity_provider = string
+    weight = number
+  }))
+  default = [ {
+    capacity_provider = "SPOT"
+    weight = 100
+  } ]
 }
 
 variable "service_task_count" {
