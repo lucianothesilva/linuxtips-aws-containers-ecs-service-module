@@ -20,11 +20,11 @@ resource "aws_ecs_service" "main" {
     for_each = var.service_launch_type
 
     content {
-      
       capacity_provider = capacity_provider_strategy.value.capacity_provider
-      weight = capacity_provider_strategy.value.weight
+      weight            = capacity_provider_strategy.value.weight
     }
   }
+
 
 
   dynamic "ordered_placement_strategy" {
