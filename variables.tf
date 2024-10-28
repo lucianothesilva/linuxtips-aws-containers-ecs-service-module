@@ -6,6 +6,11 @@ variable "service_name" {
   type = string
 }
 
+variable "container_image" {
+  type = string
+  description = "Imagem com tag para deployment da imagem n oecr"
+}
+
 variable "cluster_name" {
   type = string
 }
