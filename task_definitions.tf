@@ -18,7 +18,7 @@ resource "aws_ecs_task_definition" "main" {
       name = volume.value.volume_name
 
       efs_volume_configuration {
-        file_system_id     = volume.value.volume_name
+        file_system_id     = volume.value.file_system_id
         root_directory     = volume.value.file_system_root
         transit_encryption = "ENABLED"
       }
