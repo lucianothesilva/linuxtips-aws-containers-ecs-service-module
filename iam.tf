@@ -1,6 +1,6 @@
 # Policy para definir as permissões de execução dos services
 resource "aws_iam_role" "service_execution_role" {
-  name = format("%s-%s-service-role", var.cluster_name, var.service_name)
+  name = format("%s-service-role", var.service_name)
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
