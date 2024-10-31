@@ -74,6 +74,14 @@ variable "environment_variables" {
   type = list(map(string))
 }
 
+variable "secrets" {
+  type = list(object({
+    name : string
+    valueFrom: string
+  }))
+}
+
+
 variable "capabilities" {
   type = list(string)
 }
@@ -189,4 +197,4 @@ variable "efs_volumes" {
   }))
   description = "Volumes EFS existentes para serem montados nas tasks do ECS "
   default = []
-}
+} 
