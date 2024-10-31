@@ -71,7 +71,10 @@ variable "service_healthcheck" {
 }
 
 variable "environment_variables" {
-  type = list(map(string))
+  type = list(object({
+    name : string
+    value: string
+  }))
 }
 
 variable "secrets" {
